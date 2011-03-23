@@ -2,6 +2,7 @@
 ;; $Date: 2009/08/21 05:43:10 $
 ;; Tomasz Malisiewicz (tomasz@cmu.edu)
 ;; This is the Apple OS X specific configuration stuff
+;; I wonder why this isn't colored in github?
 
 
 (prin1 "Customizing GNU Emacs for Mac OS X")
