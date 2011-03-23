@@ -1,0 +1,56 @@
+# -*- Shell-Script -*- #Hint for emacs to open file in shell script mode
+#Hacked Up By Tomasz Malisiewicz on 03/20/2006
+#some stuff taken from http://gentoo-wiki.com/Talk:TIP_Using_screen
+#$Date: 2009/01/20 22:04:46 $
+#-*-Shell-Script-*- #Hint for emacs to open file in shell script mode
+
+# a nice status on the last line lets us know where we are
+#hardstatus alwayslastline "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%C%A  %D, %M/%d/%Y "
+
+#change emacs conflict key to C-o instead of C-a which will simplify life
+escape ^Oo
+
+#easy flips between virtual terminals with F11 and F12 keys
+#bindkey -k F1 prev
+#bindkey -k F2 next
+#caption always "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%C%A  %D, %M/%d/%Y "
+
+#display nice colorful captions
+
+#this is the second to last status line that shows info about host
+caption always "C-o %?%F%{= Wr}%:%{=u kR} %?  %h %-024=%{+b} %C%a %D %d %M %Y%{= db}"
+
+#hardstatus is the bottom-most line that has tabs on it .. it changes when we switch tabbs
+hardstatus alwayslastline "%{= kR} %-Lw%{=b Ky} %n%f %t %{-}%+Lw %=%{= dd}"
+
+
+#allows scrolling in xterms
+termcapinfo xterm|xterms|xs ti@:te=\E[2J
+
+#make a login version of the zshell the default shell
+#shell -zsh
+shell zsh
+
+
+#bindkey -k kP copy
+
+#turn off startup message
+startup_message off
+
+#bind m hardstatus alwayslastline "%{= kR} %-Lw%{=b Ky} %n%f %t %{-}%+Lw %=%{= dd}"
+#bind M hardstatus alwayslastline "%{= kR} %-Lw%{=b Kk} %n%f %t %{-}%+Lw %=%{= dd}"
+
+#bind m caption always "%? %F%{= Wr}%:%{=u kR} %?  %h %-024=%{+b} %C%a %D %d %M %Y%{= db}"
+#bind M caption always "---%? %F%{= Wr}%:%{=u kR} %?  %h %-024=%{+b} %C%a %D %d %M %Y%{= db}"
+
+#use a large scrollback buffer
+defscrollback 30000 
+
+
+#bind m escape ^Xx
+#bind M escape ^Aa
+
+setenv USING_SCREEN yes
+term xterm-color
+
+#logfile /afs/cs.cmu.edu/user/tmalisie/www/screenlogs/mylog.%n.txt

@@ -1,0 +1,76 @@
+;; -*-Lisp-*-
+;; C++ Emacs customizations
+;;This is the .emacs file of Tomasz Malisiewicz (tomasz@cmu.edu)
+;; $Date: 2009/08/12 04:06:26 $
+;add the hideshow mode to C/C++ editing (this allows to contract/expand
+;blocks of code)
+;;(add-hook 'c++-mode-hook 'hs-minor-mode)
+;;(add-hook 'c-mode-hook 'hs-minor-mode)
+
+;;use bsd style indenting with an offset of 2
+(add-hook 'c-mode-common-hook
+	  (lambda ()
+	    (c-set-style "bsd")
+	    (setq c-basic-offset 2)
+	    (local-set-key "\C-c\C-c" 'compile)))
+
+;;make sure that {.h,.cxx,.txx} files are registerd as c++ files
+;;(add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
+;;(add-to-list 'auto-mode-alist '("\\.txx$" . c++-mode))
+;;(add-to-list 'auto-mode-alist '("\\.cxx$" . c++-mode))
+
+;; this is to add cmake-mode to the list of modes
+
+;; load the definition of cmake mode for highliting cmake files
+;; make sure cmake files always show the font
+(if (file-exists-p "~/linux_files/cmake-mode.el")
+    (progn (autoload 'cmake-mode "~/linux_files/cmake-mode.el" t)
+           (add-hook 'cmake-mode-hook 'turn-on-font-lock)
+           (setq auto-mode-alist
+                 (append
+                  '(("CMakeLists\\.txt\\'" . cmake-mode))
+                  '(("\\.cmake\\'" . cmake-mode))
+                  auto-mode-alist))))
+
+;; this is really old stuff that probably doesn't work
+;; ;;based on the system-type, set the proper binary directory extension
+;; (setq sneak-directory-extension
+;;       (cond
+;;        ((equal system-type 'cygwin) "bin")
+;;        ((equal system-type 'cygwin) "cygwin_bin")
+;;        ((equal system-type 'linux) "bin")
+;;        (t "bin")))
+
+;; ;;this is an experimental flag (for using devenv.exe for building
+;; ;;through cygwin)
+;; (setq use-windows-build '())
+
+;; ;;set the compile tag
+;; ;;this sets the default compile string which is a function
+;; ;;of the directory of the file that you are trying to compile
+;; ;;if you are emacsing a file named /projects/foamy/src/nugs.cpp
+;; ;;then this compilation tag will try to cd into the /projects/foamy/bin
+;; ;;directory and then run make inside that directory 
+;; (add-hook 'c++-mode-hook
+;; 	  (function (lambda ()
+;; 		      (let* ((name (buffer-name) )
+;; 			     (fullpath (buffer-file-name))
+;; 			     (bindirectory 
+;; 			      (file-name-directory 
+;; 			       (replace-regexp-in-string "src" sneak-directory-extension fullpath t t)))
+;; 			     program)
+;; 			(make-local-variable 'compile-command)
+;; 			(string-match "\\(.+\\)\\..+" name)
+;; 			(setq program (substring name
+;; 						 (match-beginning 1)
+;; 						 (match-end 1)))
+;; 			(setq compile-command
+;; 			      (if (and use-windows-build (equal system-type 'cygwin))
+;; 				  (concat "rm /cygdrive/c/output.log && devenv /build debug /project " "prmtl " "C:/projects/rpi/bin/rpi.sln /out \"C:\\output.log\"; cat \"C:\\output.log\"")
+;; 				(concat "cd " bindirectory " && make" )
+;; 				(concat "cd " bindirectory " && make" )
+                                
+;;                                 ))))))
+
+
+;; ;;devenv /build debug /project prmtl "c:\projects\rpi\bin\rpi.sln" \output "c:\output.log" && cat "C:\output.log"

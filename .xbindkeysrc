@@ -1,0 +1,27 @@
+# For the benefit of emacs users: -*- shell-script -*-
+
+###########################
+# xbindkeys configuration #
+###########################
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+
+"gnome-terminal"
+Control+Alt + z
+
+"firefox"
+Control+Alt + f
+
+"vncviewer :1"
+Control+Alt + o
+
+"emacs"
+Control+Alt + e
+
+##################################
+# End of xbindkeys configuration #
+##################################

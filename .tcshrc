@@ -1,0 +1,20 @@
+setenv PATH /afs/cs.cmu.edu/user/tmalisie/bin/:${PATH}
+setenv EDITOR nano
+alias matlab matlab -nodesktop -nosplash
+
+#setenv SHELL /bin/zsh
+#setenv shell /bin/zsh
+
+setenv CVS_RSH /usr/bin/ssh
+setenv CVSROOT /afs/cs.cmu.edu/user/tmalisie/private/cvsroot
+#matlab craziness
+setenv LD_LIBRARY_PATH /usr/local/lib/matlab7/bin/glnx86/
+
+#setenv LD_LIBRARY_PATH /afs/cs.cmu.edu/misc/matlab/i386_fc3/7.1/lib/matlab7/sys/os/glnx86:/afs/cs.cmu.edu/misc/matlab/i386_fc3/7.1/lib/matlab7/bin/glnx86:/afs/cs.cmu.edu/misc/matlab/i386_fc3/7.1/lib/matlab7/extern/lib/glnx86:/afs/cs.cmu.edu/misc/matlab/i386_fc3/7.1/lib/matlab7/sys/java/jre/glnx86/jre1.5.0/lib/i386/native_threads:/afs/cs.cmu.edu/misc/matlab/i386_fc3/7.1/lib/matlab7/sys/java/jre/glnx86/jre1.5.0/lib/i386/client:/afs/cs.cmu.edu/misc/matlab/i386_fc3/7.1/lib/matlab7/sys/java/jre/glnx86/jre1.5.0/lib/i386
+
+    
+#set prompt="%{\ek\e\\%}\${prompt}" 
+
+#use my custom dircolors
+eval `dircolors -c ~/.mycolors`
+

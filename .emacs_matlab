@@ -1,0 +1,15 @@
+;; -*-Lisp-*-
+;; Matlab Emacs customizations
+;;This is the .emacs file of Tomasz Malisiewicz (tomasz@cmu.edu)
+;; $Date: 2009/08/12 04:05:58 $
+
+;; matlab stuff
+(autoload 'matlab-mode "~/linux_files/matlab.el" "Enter Matlab mode." t)
+(autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
+(setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
+(setq matlab-shell-command-switches "-nodesktop")
+
+;; do these two things do anything???
+(custom-set-variables
+ '(load-home-init-file t t))
+(custom-set-faces)
