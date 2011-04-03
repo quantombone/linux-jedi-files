@@ -1,7 +1,6 @@
-#This is the .zshrc file of Tomasz Malisiewicz (tomasz@cmu.edu)
-#It is used on my *nix SCS facilitized machines, *nix local machines, and *nix laptops
-#NEW: now my new *nix laptop is a MACBOOKPRO
-# $Date: 2009/08/21 05:42:30 $
+#This is the .zshrc file of Tomasz Malisiewicz (malist@gmail.com)
+#It is used on my CMU *nix SCS facilitized machines, *nix local machines, and macbook laptops
+#Now on github (https://github.com/quantombone/linux-config-files)
 
 #get the short hostname
 HOSTBASE=${HOST%%.*}
@@ -29,8 +28,8 @@ if [[ $VENDOR == "apple" ]]; then
 
     export PATH=$PATH:/usr/texbin/
 else
-    #for being at school
-    export CVSROOT=/afs/cs.cmu.edu/user/tmalisie/private/cvsroot
+    #for being at CMU
+    #export CVSROOT=/afs/cs.cmu.edu/user/tmalisie/private/cvsroot
     
     #enable colored ls always!
     alias ls='ls -Fh --color=tty -pX'
