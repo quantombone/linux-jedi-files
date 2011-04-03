@@ -9,13 +9,21 @@ HOSTBASE=${HOST%%.*}
 ## set up machine-specific variables
 if [[ $VENDOR == "apple" ]]; then
     #cvs repository if afs mount on a defacilitized machine
-    export CVSROOT=:ext:tmalisie@svd.ath.cx:/home/tmalisie/afs/private/cvsroot/
+    #CVS is deprecated
+    #export CVSROOT=:ext:tmalisie@svd.ath.cx:/home/tmalisie/afs/private/cvsroot/
     #fink stuff goes here
-    source /sw/bin/init.sh
+    if [ -d "/sw/bin/" ]; then
+        # Control will enter here if $DIRECTORY exists
+        source /sw/bin/init.sh
+    fi
+    
+    #MacPorts puts stuff here
+    export PATH=$PATH:/opt/local/bin
 
     alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
     alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
-    alias ls='ls -Fh --color=auto -pX'
+    #alias ls='ls -Fh --color=auto -pX'
+    alias ls='/opt/local/bin/gls --color=auto -h'
 
     alias matlab='export DISPLAY=:0.0 && /Applications/MATLAB74/bin/matlab -nodesktop -nosplash'
 
@@ -31,7 +39,8 @@ else
 fi
 
 #use my custom dircolors
-eval `dircolors -b ~/linux_files/.mycolors`
+#eval `dircolors -b ~/linux_files/.mycolors`
+eval `/opt/local/bin/gdircolors -b ~/linux-config-files/.mycolors`
 
 export CVS_RSH=/usr/bin/ssh
 export EDITOR=nano
