@@ -19,3 +19,5 @@ Computers:
 Macbook Pro, Macbook Air, Linux Machines, Datacenters
 
 -Tomasz Malisiewicz (malist@gmail.com)
+
+Q: does emacs git let me push it?
