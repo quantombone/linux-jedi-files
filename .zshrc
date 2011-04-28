@@ -4,6 +4,7 @@
 
 #get the short hostname
 HOSTBASE=${HOST%%.*}
+export PYTHONPATH=/opt/local/lib/python2.5/site-packages
 
 ## set up machine-specific variables
 if [[ $VENDOR == "apple" ]]; then
@@ -17,14 +18,15 @@ if [[ $VENDOR == "apple" ]]; then
     fi
     
     #MacPorts puts stuff here
-    export PATH=$PATH:/opt/local/bin
+    export PATH=$PATH:/opt/local/bin/
 
     alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
     alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
     #alias ls='ls -Fh --color=auto -pX'
     alias ls='/opt/local/bin/gls --color=auto -h'
 
-    alias matlab='export DISPLAY=:0.0 && /Applications/MATLAB74/bin/matlab -nodesktop -nosplash'
+    #alias matlab='export DISPLAY=:0.0 && /Applications/MATLAB74/bin/matlab -nodesktop -nosplash'
+    alias matlab='export DISPLAY=:0.0 && /Applications/MATLAB_R2010a.app/bin/matlab -nodesktop -nosplash'
 
     export PATH=$PATH:/usr/texbin/
 else

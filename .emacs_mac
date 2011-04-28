@@ -19,3 +19,4 @@
 
 ;; we have some key executables inside this directory on the mac
 (add-to-list 'exec-path "/sw/bin/")
+(add-to-list 'exec-path "/opt/local/bin/")
