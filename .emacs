@@ -6,9 +6,17 @@
 ;; Load Mac OS X customizations
 ;; Here we determine if we are on an apple system and load the
 ;; apple-specific files
+
+(add-to-list 'load-path "~/linux-config-files/")
+(require 'git)
+;;(if (string-match "apple" system-configuration)
+;;    (if (file-exists-p "~/linux-config-files/git.el")
+;;        (load-file "~/linux-config-files/git")))
+
+
 (if (string-match "apple" system-configuration)
-    (if (file-exists-p "~/linux_files/.emacs_mac")
-        (load-file "~/linux_files/.emacs_mac")))
+    (if (file-exists-p "~/linux-config-files/.emacs_mac")
+        (load-file "~/linux-config-files/.emacs_mac")))
 
 
 ;;(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -37,10 +45,11 @@
 
 (setq-default indent-tabs-mode nil)
 
-;;(global-set-key "\C-c\C-c" 'compile)
-;;(setq tex-command "pdflatex")
-;;(setq tex-dvi-view-command "xdvi")
-;;(setq latex-run-command "pdflatex")
+(global-set-key "\C-c\C-c" 'compile)
+(setq tex-command "pdflatex")
+(setq tex-dvi-view-command "xdvi")
+(setq latex-run-command "pdflatex")
+(setq tex-view-command "/Applications/Preview.app/Contents/MacOS/Preview")
 
 ;; Load the emacs C++ customizations (undergrad c++ hacker galore)
 (if (file-exists-p "~/linux_files/.emacs_cpp")
@@ -77,6 +86,14 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook (lambda () (flyspell-mode 1)))
 (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
+(setq TeX-PDF-mode t)
+
+;; (defun pdfevince ()
+;;    (add-to-list 'TeX-output-view-style 
+;;                     (quote ("^pdf$" "." "/Applications/Preview.app/Contents/MacOS/Preview %o %(outpage)")))
+;; )
+
+;; (add-hook  'LaTeX-mode-hook  'pdfevince  t) 
 
 ;;inhibit startup message
 (setq inhibit-startup-message t)
