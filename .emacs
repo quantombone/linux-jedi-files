@@ -7,6 +7,8 @@
 ;; Here we determine if we are on an apple system and load the
 ;; apple-specific files
 
+;; lots of outdated modes in here that need cleanup
+
 (add-to-list 'load-path "~/linux-config-files/")
 (require 'git)
 ;;(if (string-match "apple" system-configuration)
