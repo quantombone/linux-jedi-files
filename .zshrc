@@ -29,6 +29,8 @@ if [[ $VENDOR == "apple" ]]; then
     alias matlab='export DISPLAY=:0.0 && /Applications/MATLAB_R2010a.app/bin/matlab -nodesktop -nosplash'
 
     export PATH=$PATH:/usr/texbin/
+
+    eval `/opt/local/bin/gdircolors -b ~/linux-config-files/.mycolors`
 else
     #for being at CMU
     #export CVSROOT=/afs/cs.cmu.edu/user/tmalisie/private/cvsroot
@@ -37,11 +39,13 @@ else
     alias ls='ls -Fh --color=tty -pX'
     alias matlab='matlab -nodesktop -nosplash'
 
+
+    #use my custom dircolors
+    eval `dircolors -b ~/linux_files/.mycolors`
+
+
 fi
 
-#use my custom dircolors
-#eval `dircolors -b ~/linux_files/.mycolors`
-eval `/opt/local/bin/gdircolors -b ~/linux-config-files/.mycolors`
 
 export CVS_RSH=/usr/bin/ssh
 export EDITOR=nano
@@ -202,3 +206,6 @@ fi
 #  unsetopt zle
 #fi
 
+#add some more paths for git and such
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/
+export PATH=/usr1/users/tmalisie/git/bin/:${PATH}
