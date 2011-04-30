@@ -54,12 +54,12 @@
 (setq tex-view-command "/Applications/Preview.app/Contents/MacOS/Preview")
 
 ;; Load the emacs C++ customizations (undergrad c++ hacker galore)
-(if (file-exists-p "~/linux_files/.emacs_cpp")
-    (load-file "~/linux_files/.emacs_cpp"))
+(if (file-exists-p "~/linux-config-files/.emacs_cpp")
+    (load-file "~/linux-config-files/.emacs_cpp"))
 
 ;; Load the emacs Matlab customizations
-(if (file-exists-p "~/linux_files/.emacs_matlab")
-    (load-file "~/linux_files/.emacs_matlab"))
+(if (file-exists-p "~/linux-config-files/.emacs_matlab")
+    (load-file "~/linux-config-files/.emacs_matlab"))
 
 ;; this enables automatic scrolling inside a compilation-mode buffer
 (setq compilation-scroll-output t)
@@ -101,23 +101,18 @@
 (setq inhibit-startup-message t)
 
 ;; graphviz stuff
-(setq graphviz-file "~/linux_files/graphviz-dot-mode.el")
+(setq graphviz-file "~/linux-config-files/graphviz-dot-mode.el")
 (if (file-exists-p graphviz-file)
     (load-file graphviz-file))
 
 ;; js2 stuff
-(setq javascript-file "~/linux_files/js2.el")
+(setq javascript-file "~/linux-config-files/js2.el")
 (if (file-exists-p javascript-file)
     (progn
       (autoload 'js2-mode javascript-file nil t)
       (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))))
 
 (put 'erase-buffer 'disabled nil)
-
-;;; tramp stuff
-(setq tramp-default-method "ssh")
-(setq tramp-default-user "tmalisie"
-      tramp-default-host "gs5059.sp.cs.cmu.edu")
 
 ;;(require 'smart-compile)
 ;;(global-set-key (kbd "C-<f12>") 'smart-compile)
@@ -135,11 +130,9 @@
           'executable-make-buffer-file-executable-if-script-p)
 
 (global-set-key "\C-x\C-m" 'execute-extended-command)
-(global-set-key "\C-c\C-m" 'execute-extended-command)
 
 
 (require 'linum)
-
  (defun toggle-linum-mode ()
       (interactive)
       (if linum-mode
@@ -147,7 +140,4 @@
         (linum-mode 1)))
 
 (global-set-key "\C-c\C-n" 'toggle-linum-mode)
-
-
-
 

@@ -26,7 +26,7 @@ if [[ $VENDOR == "apple" ]]; then
     alias ls='/opt/local/bin/gls --color=auto -h'
 
     #alias matlab='export DISPLAY=:0.0 && /Applications/MATLAB74/bin/matlab -nodesktop -nosplash'
-    alias matlab='export DISPLAY=:0.0 && /Applications/MATLAB_R2010a.app/bin/matlab -nodesktop -nosplash'
+    alias matlab='/Applications/MATLAB_R2010a.app/bin/matlab -nodesktop -nosplash'
 
     export PATH=$PATH:/usr/texbin/
 
