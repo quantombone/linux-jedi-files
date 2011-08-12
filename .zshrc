@@ -1,7 +1,9 @@
 #This is the .zshrc file of Tomasz Malisiewicz (malist@gmail.com)
 #It is used on my CMU *nix SCS facilitized machines, *nix local machines, and macbook laptops
 #Now on github (https://github.com/quantombone/linux-config-files)
-
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.history
 #get the short hostname
 HOSTBASE=${HOST%%.*}
 export PYTHONPATH=/opt/local/lib/python2.5/site-packages
