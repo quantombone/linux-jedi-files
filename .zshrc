@@ -43,7 +43,7 @@ else
 
 
     #use my custom dircolors
-    eval `dircolors -b ~/linux_files/.mycolors`
+    eval `dircolors -b ~/linux-config-files/.mycolors`
 
 
 fi
