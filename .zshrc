@@ -32,7 +32,7 @@ if [[ $VENDOR == "apple" ]]; then
 
     export PATH=$PATH:/usr/texbin/
 
-    eval `/opt/local/bin/gdircolors -b ~/linux-config-files/.mycolors`
+    eval `/opt/local/bin/gdircolors -b ~/linux-jedi-files/.mycolors`
 else
     #for being at CMU
     #export CVSROOT=/afs/cs.cmu.edu/user/tmalisie/private/cvsroot
@@ -43,7 +43,7 @@ else
 
 
     #use my custom dircolors
-    eval `dircolors -b ~/linux-config-files/.mycolors`
+    eval `dircolors -b ~/linux-jedi-files/.mycolors`
 
 
 fi
