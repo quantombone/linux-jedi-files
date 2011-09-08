@@ -7,10 +7,12 @@ This files contains my customization files for *nix systems (macbooks and linux 
 
 I should also take the time to describe my computing environment, which uses lots of terminals, lots of emacs, and vnc/fluxbox on my developmant machines
 
-
 Terminals/Shells:
 ZSH: I use zsh, instead of bash, which lets me use escape sequences to talk to my screen sessions
 GNU Screen: this lets me work on remote machines
+
+Emacs:
+I am a hardcore emacs nerd, I can't even tell you all the keybindings which my fingers have memorized, but damn I'm fast.
 
 Desktop:
 Fluxbox@Work, MacOSX@Home/Laptop
@@ -20,4 +22,3 @@ Macbook Pro, Macbook Air, Linux Machines, Datacenters
 
 -Tomasz Malisiewicz (malist@gmail.com)
 
-Q: does emacs git let me push it?
