@@ -1,7 +1,9 @@
 #This is the .zshrc file of Tomasz Malisiewicz (malist@gmail.com)
 #It is used on my CMU *nix SCS facilitized machines, *nix local machines, and macbook laptops
 #Now on github (https://github.com/quantombone/linux-config-files)
-
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.history
 #get the short hostname
 HOSTBASE=${HOST%%.*}
 export PYTHONPATH=/opt/local/lib/python2.5/site-packages
@@ -29,6 +31,8 @@ if [[ $VENDOR == "apple" ]]; then
     alias matlab='/Applications/MATLAB_R2011a.app/bin/matlab -nodesktop -nosplash'
 
     export PATH=$PATH:/usr/texbin/
+
+    eval `/opt/local/bin/gdircolors -b ~/linux-jedi-files/.mycolors`
 else
     #for being at CMU
     #export CVSROOT=/afs/cs.cmu.edu/user/tmalisie/private/cvsroot
@@ -37,11 +41,13 @@ else
     alias ls='ls -Fh --color=tty -pX'
     alias matlab='matlab -nodesktop -nosplash'
 
+
+    #use my custom dircolors
+    eval `dircolors -b ~/linux-jedi-files/.mycolors`
+
+
 fi
 
-#use my custom dircolors
-#eval `dircolors -b ~/linux_files/.mycolors`
-eval `/opt/local/bin/gdircolors -b ~/linux-config-files/.mycolors`
 
 export CVS_RSH=/usr/bin/ssh
 export EDITOR=nano
@@ -202,3 +208,6 @@ fi
 #  unsetopt zle
 #fi
 
+#add some more paths for git and such
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/
+export PATH=/usr1/users/tmalisie/git/bin/:${PATH}

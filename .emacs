@@ -141,3 +141,7 @@
 
 (global-set-key "\C-c\C-n" 'toggle-linum-mode)
 
+
+;; Add this path, since we need it for git
+(setenv "PATH" (concat "/usr1/users/tmalisie/git/bin/:"
+                (getenv "PATH")))
