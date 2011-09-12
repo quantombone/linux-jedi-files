@@ -10,7 +10,7 @@
 ;; lots of outdated modes in here that need cleanup
 
 (add-to-list 'load-path "~/linux-config-files/")
-(require 'git)
+;(require 'git)
 ;;(if (string-match "apple" system-configuration)
 ;;    (if (file-exists-p "~/linux-config-files/git.el")
 ;;        (load-file "~/linux-config-files/git")))
