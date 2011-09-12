@@ -209,5 +209,6 @@ fi
 #fi
 
 #add some more paths for git and such
+#NOTE: this was only on the CMU machines
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/
 export PATH=/usr1/users/tmalisie/git/bin/:${PATH}
