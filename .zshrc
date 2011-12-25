@@ -39,7 +39,7 @@ else
     
     #enable colored ls always!
     alias ls='ls -Fh --color=tty -pX'
-    alias matlab='matlab -nodesktop -nosplash'
+    #alias matlab='matlab -nodesktop -nosplash'
 
 
     #use my custom dircolors
@@ -210,4 +210,5 @@ fi
 
 #add some more paths for git and such
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/
-export PATH=/usr1/users/tmalisie/git/bin/:${PATH}
+export PATH=~/install/bin:${PATH}:/usr1/users/tmalisie/git/bin/:~/install/bin/:~/bin/:~/video-adapt/scripts/
+umask 0002
