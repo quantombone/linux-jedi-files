@@ -4,7 +4,7 @@
 ;; $Date: 2009/08/12 04:05:58 $
 
 ;; matlab stuff
-(autoload 'matlab-mode "~/linux_files/matlab.el" "Enter Matlab mode." t)
+(autoload 'matlab-mode "~/linux-jedi-files/matlab.el" "Enter Matlab mode." t)
 (autoload 'matlab-shell "matlab" "Interactive MATLAB mode." t)
 (setq auto-mode-alist (cons '("\\.m\\'" . matlab-mode) auto-mode-alist))
 (setq matlab-shell-command-switches "-nodesktop")
