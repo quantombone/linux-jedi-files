@@ -1,23 +1,20 @@
-Here is a readme file.  I guess github likes these -- I will update it later.
-:D
 
-This files contains my customization files for *nix systems (macbooks and linux servers).
+This repository contains my dotfiles/customization-files for ***nix** systems (macbooks and linux servers).
 
 ![](https://github.com/quantombone/linux-jedi-files/raw/master/screenshots/screenshot-terminal1.png)
 
 I should also take the time to describe my computing environment, which uses lots of terminals, lots of emacs, and vnc/fluxbox on my developmant machines
 
+##Terminals/Shells:
+ * ZSH: I use zsh, instead of bash, which lets me use escape sequences to talk to my screen sessions
+ * GNU Screen: this lets me work on remote machines
+ * Emacs: I am a hardcore emacs nerd, I can't even tell you all the keybindings which my fingers have memorized, but damn I'm fast.
 
-Terminals/Shells:
-ZSH: I use zsh, instead of bash, which lets me use escape sequences to talk to my screen sessions
-GNU Screen: this lets me work on remote machines
-
-Desktop:
+## Desktop:
 Fluxbox@Work, MacOSX@Home/Laptop
 
-Computers:
-Macbook Pro, Macbook Air, Linux Machines, Datacenters
+## Types of computers I use:
+Macbook Pro, Macbook Air, iMac, Linux Machines, Datacenters
 
--Tomasz Malisiewicz (malist@gmail.com)
+--Tomasz Malisiewicz (malist@gmail.com)
 
-Q: does emacs git let me push it?

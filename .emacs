@@ -8,12 +8,14 @@
 ;; apple-specific files
 
 ;; lots of outdated modes in here that need cleanup
+(require 'cl)
+(defvar *emacs-load-start* (current-time))
 
 (add-to-list 'load-path "~/linux-jedi-files/")
 (require 'git)
 ;;(if (string-match "apple" system-configuration)
-;;    (if (file-exists-p "~/linux-config-files/git.el")
-;;        (load-file "~/linux-config-files/git")))
+;;    (if (file-exists-p "~/linux-jedi-files/git.el")
+;;        (load-file "~/linux-jedi-files/git")))
 
 
 (if (string-match "apple" system-configuration)
@@ -145,3 +147,6 @@
 ;; Add this path, since we need it for git
 (setenv "PATH" (concat "/usr1/users/tmalisie/git/bin/:"
                 (getenv "PATH")))
+
+(message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
+                           (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))

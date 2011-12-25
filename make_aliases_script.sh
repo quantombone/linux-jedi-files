@@ -1,5 +1,11 @@
-#This script will make the aliases for us
+#This script will aliases from the current directory into the home directory
 
-ln -s ~/linux-jedi-files/.zshrc ~/.zshrc
-ln -s ~/linux-jedi-files/.emacs ~/.emacs
-ln -s ~/linux-jedi-files/.screenrc ~/.screenrc
+#Get the current directory
+DIR=`pwd`
+
+#Make the aliases
+ln -s ${DIR}/.mycolors ~/.mycolors
+ln -s ${DIR}/.zshrc ~/.zshrc
+ln -s ${DIR}/.emacs ~/.emacs
+ln -s ${DIR}/.screenrc ~/.screenrc
+
