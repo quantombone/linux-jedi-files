@@ -9,7 +9,7 @@
 
 ;; lots of outdated modes in here that need cleanup
 
-(add-to-list 'load-path "~/linux-config-files/")
+(add-to-list 'load-path "~/linux-jedi-files/")
 (require 'git)
 ;;(if (string-match "apple" system-configuration)
 ;;    (if (file-exists-p "~/linux-config-files/git.el")
@@ -17,8 +17,8 @@
 
 
 (if (string-match "apple" system-configuration)
-    (if (file-exists-p "~/linux-config-files/.emacs_mac")
-        (load-file "~/linux-config-files/.emacs_mac")))
+    (if (file-exists-p "~/linux-jedi-files/.emacs_mac")
+        (load-file "~/linux-jedi-files/.emacs_mac")))
 
 
 ;;(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -54,12 +54,12 @@
 (setq tex-view-command "/Applications/Preview.app/Contents/MacOS/Preview")
 
 ;; Load the emacs C++ customizations (undergrad c++ hacker galore)
-(if (file-exists-p "~/linux-config-files/.emacs_cpp")
-    (load-file "~/linux-config-files/.emacs_cpp"))
+(if (file-exists-p "~/linux-jedi-files/.emacs_cpp")
+    (load-file "~/linux-jedi-files/.emacs_cpp"))
 
 ;; Load the emacs Matlab customizations
-(if (file-exists-p "~/linux-config-files/.emacs_matlab")
-    (load-file "~/linux-config-files/.emacs_matlab"))
+(if (file-exists-p "~/linux-jedi-files/.emacs_matlab")
+    (load-file "~/linux-jedi-files/.emacs_matlab"))
 
 ;; this enables automatic scrolling inside a compilation-mode buffer
 (setq compilation-scroll-output t)
@@ -101,12 +101,12 @@
 (setq inhibit-startup-message t)
 
 ;; graphviz stuff
-(setq graphviz-file "~/linux-config-files/graphviz-dot-mode.el")
+(setq graphviz-file "~/linux-jedi-files/graphviz-dot-mode.el")
 (if (file-exists-p graphviz-file)
     (load-file graphviz-file))
 
 ;; js2 stuff
-(setq javascript-file "~/linux-config-files/js2.el")
+(setq javascript-file "~/linux-jedi-files/js2.el")
 (if (file-exists-p javascript-file)
     (progn
       (autoload 'js2-mode javascript-file nil t)
@@ -132,14 +132,14 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 
 
-(require 'linum)
- (defun toggle-linum-mode ()
-      (interactive)
-      (if linum-mode
-        (linum-mode -1)
-        (linum-mode 1)))
+;(require 'linum)
+; (defun toggle-linum-mode ()
+;      (interactive)
+;      (if linum-mode
+;        (linum-mode -1)
+;        (linum-mode 1)))
 
-(global-set-key "\C-c\C-n" 'toggle-linum-mode)
+;(global-set-key "\C-c\C-n" 'toggle-linum-mode)
 
 
 ;; Add this path, since we need it for git
