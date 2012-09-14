@@ -1,6 +1,8 @@
 #This is the .zshrc file of Tomasz Malisiewicz (malist@gmail.com)
 #It is used on my CMU *nix SCS facilitized machines, *nix local machines, and macbook laptops
 #Now on github (https://github.com/quantombone/linux-config-files)
+
+umask 0002
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
@@ -211,4 +213,4 @@ fi
 #add some more paths for git and such
 #NOTE: this was only on the CMU machines
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/
-export PATH=/usr1/users/tmalisie/git/bin/:${PATH}
+export PATH=/usr1/users/tmalisie/git/bin/:~/bin/:${PATH}
