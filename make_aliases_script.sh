@@ -8,3 +8,4 @@ ln -s ${DIR}/.mycolors ~/.mycolors
 ln -s ${DIR}/.zshrc ~/.zshrc
 ln -s ${DIR}/.emacs ~/.emacs
 ln -s ${DIR}/.screenrc ~/.screenrc
+

@@ -137,14 +137,14 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 
 
-(require 'linum)
- (defun toggle-linum-mode ()
-      (interactive)
-      (if linum-mode
-        (linum-mode -1)
-        (linum-mode 1)))
+;(require 'linum)
+; (defun toggle-linum-mode ()
+;      (interactive)
+;      (if linum-mode
+;        (linum-mode -1)
+;        (linum-mode 1)))
 
-(global-set-key "\C-c\C-n" 'toggle-linum-mode)
+;(global-set-key "\C-c\C-n" 'toggle-linum-mode)
 
 
 ;; Add this path, since we need it for git
