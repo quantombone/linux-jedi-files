@@ -659,7 +659,7 @@ Argument LIMIT is the maximum distance to search."
 	      t)
 	  (error nil)))))
 
-(defcustom matlab-keyword-list '("global" "for" "while" "if" "elseif" "else"
+(defcustom matlab-keyword-list '("global" "for" "parfor" "while" "if" "elseif" "else"
 				 "endfunction" "return" "break"
 				 "switch" "case" "otherwise" "try"
 				 "catch")
@@ -1133,7 +1133,7 @@ Return nil if it is being used to dereference an array."
   "Keywords which mark the beginning of an indented block.
 Includes function.")
 
-(defconst matlab-block-beg-pre-no-if "for\\|while\\|if\\|switch\\|try"
+(defconst matlab-block-beg-pre-no-if "for\\|parfor\\|while\\|if\\|switch\\|try"
   "Keywords which mark the beginning of an indented block.
 Excludes function.")
 
@@ -1213,7 +1213,7 @@ blocks.")
 ;;; Lists for matlab keywords =================================================
 
 (defvar matlab-keywords-solo
-  '("break" "case" "else" "elseif" "end" "for" "function" "if"
+  '("break" "case" "else" "elseif" "end" "for" "parfor" "function" "if"
     "otherwise" "profile" "switch" "while")
   "Keywords that appear on a line by themselves.")
 (defvar matlab-keywords-return
@@ -1455,7 +1455,7 @@ Travels across continuations."
 	;; This list of keywords is NOT meant to be comprehensive.
 	(r (save-excursion
 	     (re-search-backward
-	      "^\\s-*\\(%\\|if\\|else\\(if\\)\\|while\\|for\\|$\\)\\>"
+	      "^\\s-*\\(%\\|if\\|else\\(if\\)\\|while\\|parfor\\|for\\|$\\)\\>"
 	      nil t))))
     (while (and (or (save-excursion (and (matlab-prev-line)
 					 (matlab-lattr-cont)))
