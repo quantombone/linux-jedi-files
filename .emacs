@@ -11,6 +11,8 @@
 (require 'cl)
 (defvar *emacs-load-start* (current-time))
 
+
+
 (add-to-list 'load-path "~/linux-jedi-files/")
 (require 'git)
 ;;(if (string-match "apple" system-configuration)
@@ -70,6 +72,7 @@
 (add-hook 'comint-output-filter-functions
           'comint-watch-for-password-prompt)
 
+
 (global-set-key "\C-h" 'backward-delete-char)
 (define-key global-map "\C-h" 'backward-delete-char)
 
@@ -108,7 +111,7 @@
     (load-file graphviz-file))
 
 ;; js2 stuff
-(setq javascript-file "~/linux-jedi-files/js2.el")
+(setq javascript-file "~/linux-jedi-files/js2-mode.el")
 (if (file-exists-p javascript-file)
     (progn
       (autoload 'js2-mode javascript-file nil t)
@@ -147,6 +150,9 @@
 ;; Add this path, since we need it for git
 (setenv "PATH" (concat "/usr1/users/tmalisie/git/bin/:"
                 (getenv "PATH")))
+
+(setq visible-bell t)
+
 
 (message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
                            (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
