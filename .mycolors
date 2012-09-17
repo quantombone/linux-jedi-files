@@ -121,6 +121,7 @@ EXEC 01;32
 .tex 00;36
 .bib 00;36
 .txt 00;36
+.md 00;36 #also support markdown files
 .html 00;36
 
 #javascript files
