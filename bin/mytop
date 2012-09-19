@@ -5,7 +5,7 @@
 # Tomasz Malisiewicz (tomasz@csail.mit.edu)
 
 CPU_USAGE=`ps -eo pcpu | tail -n +2 | awk '{ SUM += $1} END {print int(SUM) }'`
-echo "[mytop]  CPU_USAGE =" $CPU_USAGE
+echo "[mytop] CPU_USAGE =" $CPU_USAGE
 
 if [ "$#" -ne 1 ]
 then
