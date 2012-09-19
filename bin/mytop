@@ -1,0 +1,24 @@
+#!/bin/sh
+# This is a useful script for running a job on a cluster if an only if the current machine isn't overloaded with jobs
+# The following example will only run long_job if mytop returns something less than 100
+# mytop 100 && long_job
+# Tomasz Malisiewicz (tomasz@csail.mit.edu)
+
+CPU_USAGE=`ps -eo pcpu | tail -n +2 | awk '{ SUM += $1} END {print int(SUM) }'`
+echo "[mytop]  CPU_USAGE =" $CPU_USAGE
+
+if [ "$#" -ne 1 ]
+then
+    #Default CPU threshold is 50
+    THRESHOLD=50
+else
+    THRESHOLD=$1
+fi
+
+if [ $CPU_USAGE -gt $THRESHOLD ]
+then
+    echo "[mytop] KILLING proc because mytop says" $CPU_USAGE "which is above" $THRESHOLD
+    exit 1
+else
+    exit 0
+fi
