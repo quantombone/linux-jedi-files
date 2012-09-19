@@ -1,32 +1,35 @@
-#This is the .zshrc file of Tomasz Malisiewicz (malist@gmail.com)
-#It is used on my CMU *nix SCS facilitized machines, *nix local machines, and macbook laptops
-#Now on github (https://github.com/quantombone/linux-config-files)
+#This is my .zshrc file which I use on *nix servers at CMU and MIT, as well as my local laptops
+# Tomasz Malisiewicz (malist@gmail.com / tomasz@cmu.edu / tomasz@csail.mit.edu)
+# It is used on my CMU *nix SCS facilitized machines, *nix local machines, and macbook laptops
+# Now on github (https://github.com/quantombone/linux-config-files)
 
 umask 0002
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.history
+
 #get the short hostname
 HOSTBASE=${HOST%%.*}
 export PYTHONPATH=/opt/local/lib/python2.5/site-packages
 
 ## set up machine-specific variables
 if [[ $VENDOR == "apple" ]]; then
-    #cvs repository if afs mount on a defacilitized machine
-    #CVS is deprecated
-    #export CVSROOT=:ext:tmalisie@svd.ath.cx:/home/tmalisie/afs/private/cvsroot/
+    
     #fink stuff goes here
-    if [ -d "/sw/bin/" ]; then
-        # Control will enter here if $DIRECTORY exists
-        source /sw/bin/init.sh
-    fi
+    #deprecated due to switch to macports in ~2010
+    #if [ -d "/sw/bin/" ]; then
+    #    # Control will enter here if $DIRECTORY exists
+    #    source /sw/bin/init.sh
+    #fi
     
     #MacPorts puts stuff here
     export PATH=$PATH:/opt/local/bin/
 
+    #Setup emacs alias
     alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
-    alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
-    #alias ls='ls -Fh --color=auto -pX'
+    #alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
+    
+    #Use ls which allows coloring
     alias ls='/opt/local/bin/gls --color=auto -h'
 
     #alias matlab='export DISPLAY=:0.0 && /Applications/MATLAB74/bin/matlab -nodesktop -nosplash'
@@ -212,7 +215,8 @@ fi
 
 #add some more paths for git and such
 #NOTE: this was only on the CMU machines
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/
+#NOTE: This gave an error on Mountain Lion
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/
 
 export PATH=/usr1/users/tmalisie/git/bin/:~/bin/:${PATH}
 #export PATH=~/install/bin:${PATH}:/usr1/users/tmalisie/git/bin/:~/install/bin/:~/bin/:~/video-adapt/scripts/

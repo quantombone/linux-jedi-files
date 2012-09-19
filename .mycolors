@@ -121,6 +121,7 @@ EXEC 01;32
 .tex 00;36
 .bib 00;36
 .txt 00;36
+.md 00;36 #also support markdown files
 .html 00;36
 
 #javascript files
@@ -133,3 +134,11 @@ EXEC 01;32
 .dvi 00;34
 .ps  00;34
 .eps 00;30;47
+
+#c++ for development
+.h 01;33
+.cpp 00;33
+.cc 00;33
+.c 00;33
+.cxx 00;33
+
