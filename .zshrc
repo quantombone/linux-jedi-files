@@ -15,42 +15,30 @@ export PYTHONPATH=/opt/local/lib/python2.5/site-packages
 ## set up machine-specific variables
 if [[ $VENDOR == "apple" ]]; then
     
-    #fink stuff goes here
-    #deprecated due to switch to macports in ~2010
-    #if [ -d "/sw/bin/" ]; then
-    #    # Control will enter here if $DIRECTORY exists
-    #    source /sw/bin/init.sh
-    #fi
-    
     #MacPorts puts stuff here
     export PATH=$PATH:/opt/local/bin/
 
     #Setup emacs alias
     alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
-    #alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
     
-    #Use ls which allows coloring
+    #Use ls which allows coloring (will have to get the better ls via MacPorts first)
     alias ls='/opt/local/bin/gls --color=auto -h'
 
-    #alias matlab='export DISPLAY=:0.0 && /Applications/MATLAB74/bin/matlab -nodesktop -nosplash'
+    #Setup matlab alias
     alias matlab='/Applications/MATLAB_R2011a.app/bin/matlab -nodesktop -nosplash'
 
-    export PATH=$PATH:/usr/texbin/
-
+    #deprecated it must be old
+    #export PATH=$PATH:/usr/texbin/
+    
+    #setup dircolors to give me cool terminal colors
     eval `/opt/local/bin/gdircolors -b ~/linux-jedi-files/.mycolors`
 else
-    #for being at CMU
-    #export CVSROOT=/afs/cs.cmu.edu/user/tmalisie/private/cvsroot
     
     #enable colored ls always!
     alias ls='ls -Fh --color=tty -pX'
-    #alias matlab='matlab -nodesktop -nosplash'
-
-
+    
     #use my custom dircolors
     eval `dircolors -b ~/linux-jedi-files/.mycolors`
-
-
 fi
 
 
@@ -169,32 +157,6 @@ compinit
 zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
 
-#alias Ea='screen -X escape ^a^a'
-#alias Ex='screen -X escape ^x^x'
-#emacs server stuff goes here:  not using this though
-# e() {
-#     local FILE=$1
-    
-#     if [[ -z $FILE ]]; then
-#         echo "Missing filename"
-#         return
-#     fi
-    
-#     if [ $FILE[0] != "/" -o $FILE[0] = "~" ]
-#     then
-#         FILE="$PWD/$FILE"
-#     fi
-    
-#     if [[ -z $2 ]]; then
-#         emacsclient -n $FILE
-#     else
-#         emacsclient -e "(find-file-other-frame \"$FILE\")"
-#     fi
-# }
-
-# ef() {
-#     e $1 "yes"
-# }
 
 ##fix stuff here???
 if [ "$TERM" = "dumb" ]
@@ -218,7 +180,7 @@ fi
 #NOTE: This gave an error on Mountain Lion
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/
 
-export PATH=/usr1/users/tmalisie/git/bin/:~/bin/:${PATH}
+export PATH=~/bin/:${PATH}
 #export PATH=~/install/bin:${PATH}:/usr1/users/tmalisie/git/bin/:~/install/bin/:~/bin/:~/video-adapt/scripts/
 
 umask 0002
