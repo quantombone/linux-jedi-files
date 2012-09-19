@@ -4,7 +4,6 @@
 ;; This is the Apple OS X specific configuration stuff
 ;; I wonder why this isn't colored in github?
 
-
 (prin1 "Customizing GNU Emacs for Mac OS X")
 
 ;; make the command ("apple key") the meta so my fingers dont hurt
@@ -18,11 +17,12 @@
     (add-to-list 'default-frame-alist '(alpha 95 85)))
 
 ;; we have some key executables inside this directory on the mac
-(add-to-list 'exec-path "/sw/bin/")
+;old fink stuff
+;(add-to-list 'exec-path "/sw/bin/")
+;(setenv "PATH" (concat "/sw/bin:"
+;                (getenv "PATH")))
+
+;macports stuff
 (add-to-list 'exec-path "/opt/local/bin/")
-
-(setenv "PATH" (concat "/sw/bin:"
-                (getenv "PATH")))
-
-(setenv "PATH" (concat "/opt/local/bin::"
+(setenv "PATH" (concat "/opt/local/bin:"
                 (getenv "PATH")))

@@ -14,7 +14,7 @@ export PYTHONPATH=/opt/local/lib/python2.5/site-packages
 
 ## set up machine-specific variables
 if [[ $VENDOR == "apple" ]]; then
-    
+
     #MacPorts puts stuff here
     export PATH=$PATH:/opt/local/bin/
 
@@ -32,8 +32,7 @@ if [[ $VENDOR == "apple" ]]; then
     
     #setup dircolors to give me cool terminal colors
     eval `/opt/local/bin/gdircolors -b ~/linux-jedi-files/.mycolors`
-else
-    
+else    
     #enable colored ls always!
     alias ls='ls -Fh --color=tty -pX'
     

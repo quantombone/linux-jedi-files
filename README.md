@@ -17,6 +17,9 @@ cd ~/linux-jedi-files/
  * GNU Screen: this lets me work on remote machines, and is useful for spawning remote jobs on a cluster.
  * Emacs: I am a hardcore emacs nerd. I can't even tell you all the keybindings which my fingers have memorized, but damn I'm fast. (see my .emacs file)
 
+## Emacs
+ * I heavily use Emacs, in both window mode "emacs -nw" as well as a Carbo-based Emacs on my Macbooks.  I run a shell "M-x shell" inside emacs, where I then run Matlab inside this shell.
+
 ## Desktop:
 Fluxbox@Work, MacOSX@Home/Laptop
 
@@ -24,6 +27,6 @@ Fluxbox@Work, MacOSX@Home/Laptop
 Macbook Pro, Macbook Air, iMac, Linux Machines, Datacenters
 
 ## Note for Apple Machines
-It is a good idea to get MacPorts and "sudo port install ..." a bunch of core utilities
+It is a good idea to get MacPorts and "sudo port install coreutils" to get gls working
 
 --Tomasz Malisiewicz (malist@gmail.com)
