@@ -179,7 +179,7 @@ fi
 #NOTE: This gave an error on Mountain Lion
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib64/
 
-export PATH=~/bin/:${PATH}
+export PATH=~/bin/:~/linux-jedi-files/bin/:${PATH}
 #export PATH=~/install/bin:${PATH}:/usr1/users/tmalisie/git/bin/:~/install/bin/:~/bin/:~/video-adapt/scripts/
 
 umask 0002
