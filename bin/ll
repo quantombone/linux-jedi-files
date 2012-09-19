@@ -1,0 +1,7 @@
+#!/bin/sh
+# This is a shell script which lists the number of lock directories as well as the number of .mat files inside the current directory structure (including children directories)
+# It is useful for checking up the status of a Matlab job
+# Tomasz Malisiewicz (malist@gmail.com)
+
+echo "# .mat  = " `find . -name "*mat" 2> /dev/null | wc -l`
+echo "# .lock = " `find . -name "*lock" 2> /dev/null | wc -l`
