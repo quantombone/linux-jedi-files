@@ -18,7 +18,10 @@ escape ^Oo
 #display nice colorful captions
 
 #this is the second to last status line that shows info about host
-caption always "C-o %?%F%{= Wr}%:%{=u kR} %?  %h %-024=%{+b} %C%a %D %d %M %Y%{= db}"
+caption always "C-o %?%F%{= Wr}%:%{=u kR} %?  %h %-024=%{+b}"
+
+#If you want to see the time/date, then enable this, but it will notify growl on my mac which is not desired
+#caption always "C-o %?%F%{= Wr}%:%{=u kR} %?  %h %-024=%{+b} %C%a %D %d %M %Y%{= db}"
 
 #hardstatus is the bottom-most line that has tabs on it .. it changes when we switch tabbs
 hardstatus alwayslastline "%{= kR} %-Lw%{=b Ky} %n%f %t %{-}%+Lw %=%{= dd}"
