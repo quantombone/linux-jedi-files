@@ -105,6 +105,11 @@
 ;;inhibit startup message
 (setq inhibit-startup-message t)
 
+(setq php-file "~/linux-jedi-files/php-mode.el")
+(if (file-exists-p php-file)
+    (load-file php-file))
+
+
 ;; graphviz stuff
 (setq graphviz-file "~/linux-jedi-files/graphviz-dot-mode.el")
 (if (file-exists-p graphviz-file)
