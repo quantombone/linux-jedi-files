@@ -1,4 +1,3 @@
-
 This repository contains my dotfiles/customization-files for ***nix** systems (macbooks and linux servers).
 
 ![](https://github.com/quantombone/linux-jedi-files/raw/master/screenshots/screenshot-terminal1.png)
@@ -9,6 +8,11 @@ To install these scripts do the following
 ``` sh
 git clone git@github.com:quantombone/linux-jedi-files.git
 cd ~/linux-jedi-files/
+```
+
+The issue the following command which will create symlinks for .emacs, .screenrc, .zshrc, and .dircolors
+WARING: make sure you backup your config files
+``` sh
 ./make_alias_script.sh
 ```
 
